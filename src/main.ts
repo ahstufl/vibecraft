@@ -2554,7 +2554,7 @@ function hideNotConnectedOverlay(): void {
 // Initialization
 // ============================================================================
 
-function init() {
+export function init() {
   const container = document.getElementById('canvas-container')
   if (!container) {
     console.error('Canvas container not found')
@@ -3025,7 +3025,7 @@ function init() {
 // Cleanup
 // ============================================================================
 
-function cleanup() {
+export function cleanup() {
   state.client?.disconnect()
   // Dispose all sessions
   for (const session of state.sessions.values()) {
@@ -3039,8 +3039,8 @@ function cleanup() {
 // Start
 // ============================================================================
 
-window.addEventListener('load', init)
-window.addEventListener('beforeunload', cleanup)
+// window.addEventListener('load', init)
+// window.addEventListener('beforeunload', cleanup)
 
 // Export for debugging
 ;(window as unknown as { vibecraft: AppState }).vibecraft = state

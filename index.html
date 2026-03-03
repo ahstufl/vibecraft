@@ -472,6 +472,10 @@
     <!-- Toast notifications -->
     <div id="toast-container"></div>
 
-    <script type="module" src="/src/main.ts"></script>
+    <script type="module">
+      import { init, cleanup } from '/src/main.ts'
+      window.addEventListener('load', init)
+      window.addEventListener('beforeunload', cleanup)
+    </script>
   </body>
 </html>
